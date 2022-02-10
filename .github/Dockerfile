@@ -1,7 +1,7 @@
 FROM cindytsai/eureka:python3.8
 
-COPY $GITHUB_WORKSPACE/* /work
-
-RUN chmod +x /work/print_env.sh
+RUN mkdir /workspace
+COPY $GITHUB_WORKSPACE/* /workspace
+RUN ls
+RUN chmod +x /workspace/print_env.sh
 RUN tree
-ENTRYPOINT ["/work/print_env.sh"]
