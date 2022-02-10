@@ -1,0 +1,12 @@
+name: build-test-in-docker
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-test-in-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker://cindytsai/eureka:python3.8
+      - run: $GITHUB_WORKSPACE/print_env.sh
