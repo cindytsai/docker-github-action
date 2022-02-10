@@ -7,6 +7,11 @@ jobs:
   build-test-in-docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: docker://cindytsai/eureka:python3.8
-      - run: $GITHUB_WORKSPACE/print_env.sh
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Build Docker Image.
+        run: | 
+          sudo docker build -t github-action-eureka $GITHU_WORKSPACE/.github/Dockerfile .
+          sudo docker run -it github-action-eureka
+      - name: Execute Program in Docker.
+        run: sh $GITHUB_WORKSPACE/print_env.sh
