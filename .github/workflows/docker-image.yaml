@@ -11,7 +11,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Docker Image.
         run: | 
-          sudo docker build -t github-action-eureka $GITHUB_WORKSPACE/.github
+          sudo docker build -t github-action-eureka $GITHUB_WORKSPACE/
           sudo docker run -it github-action-eureka
       - name: Execute Program in Docker.
-        run: sh $GITHUB_WORKSPACE/print_env.sh
+        run: |
+          ls
+          pwd 
+          sh $GITHUB_WORKSPACE/print_env.sh
