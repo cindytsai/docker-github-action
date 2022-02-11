@@ -9,12 +9,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Build Docker Image.
+      - name: Build Docker Image
         run: | 
           sudo docker build -t github-action-eureka $GITHUB_WORKSPACE/
-          sudo docker run -it github-action-eureka
-      - name: Execute Program in Docker.
-        run: |
-          ls
-          pwd 
-          sh $GITHUB_WORKSPACE/print_env.sh

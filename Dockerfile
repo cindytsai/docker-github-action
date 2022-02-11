@@ -4,4 +4,5 @@ RUN mkdir /workspace
 COPY $GITHUB_WORKSPACE/* /workspace/
 RUN chmod +x /workspace/print_env.sh
 RUN sh /workspace/print_env.sh
-RUN ls /workspace
+RUN apt-get -y install tree
+RUN tree
