@@ -13,5 +13,5 @@ RUN sh /workspace/print_env.sh
 #RUN ["cat", "file1.txt"]
 
 RUN cd /workspace/src
-RUN ["gcc", "-o", "main", "main.cpp"]
+RUN gcc -o main main.cpp
 CMD ["./main"]
