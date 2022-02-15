@@ -12,5 +12,5 @@ RUN sh /workspace/print_env.sh
 WORKDIR /workspace
 RUN mkdir bin
 RUN cat src/file1.txt
-RUN gcc -o bin/main src/main.cpp
+RUN g++ -o bin/main src/main.cpp
 CMD ["./bin/main"]
