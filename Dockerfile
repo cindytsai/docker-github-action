@@ -9,8 +9,8 @@ RUN chmod +x /workspace/print_env.sh
 RUN sh /workspace/print_env.sh
 
 # Go to workspace to compile code
-RUN cd /workspace/src
-RUN ["cat", "file1.txt"]
+#RUN cd /workspace/src
+#RUN ["cat", "file1.txt"]
 
 RUN cd /workspace/src
 RUN ["gcc", "-o", "main", "main.cpp"]
