@@ -9,10 +9,8 @@ RUN chmod +x /workspace/print_env.sh
 RUN sh /workspace/print_env.sh
 
 # Go to workspace to compile code
-#RUN cd /workspace/src
-#RUN ["cat", "file1.txt"]
-
-RUN cd /workspace/src
-RUN pwd
-RUN gcc -o main main.cpp
-CMD ["./main"]
+WORKDIR /workspace
+RUN mkdir bin
+RUN cat src/file1.txt
+RUN gcc -o bin/main src/main.cpp
+CMD ["./bin/main"]
