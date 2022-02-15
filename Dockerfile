@@ -10,8 +10,8 @@ RUN sh /workspace/print_env.sh
 
 # Go to workspace to compile code
 RUN cd /workspace/src
-CMD ["cat", "file1.txt"]
+RUN ["cat", "file1.txt"]
 
 RUN cd /workspace/src
-CMD ["gcc" "-o" "main" "main.cpp"]
+RUN ["gcc", "-o", "main", "main.cpp"]
 CMD ["./main"]
